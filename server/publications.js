@@ -179,8 +179,9 @@ Meteor.publish('postComments', function(postId) {
 // Publish a single comment
 
 Meteor.publish('singleComment', function(commentId) {
+  var comment = Comments.findOne(commentId);
   var isPublic=!Posts.findOne({
-    _id: Comments.findOne(commentId).post,
+    _id: comment && comment.post,
     categories: {$elemMatch:{isModerator:true}}
   });
   var currentUser = Meteor.users.findOne(this.userId);
