@@ -5,7 +5,7 @@ serveAPI = function(limitSegment){
   if(typeof limitSegment !== 'undefined')
     limit = limitSegment;
 
-  Posts.find({status: STATUS_APPROVED}, {sort: {submitted: -1}, limit: limit}).forEach(function(post) {
+  Posts.find({status: STATUS_APPROVED, categories:{$not:{$elemMatch:{isModerator:true}}}}, {sort: {submitted: -1}, limit: limit}).forEach(function(post) {
     var url = (post.url ? post.url : getPostUrl(post._id));
     var properties = {
      headline: post.headline,
