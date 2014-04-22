@@ -32,7 +32,7 @@
         {{/if}}
         <h3 class="post-heading">
           <a href="{{postLink}}" class="post-title" target="{{postTarget}}">{{headline}}</a>
-          {{#if url}}<span class="post-domain">{{domain}}</span>{{/if}}
+          {{#if url}}<span class="post-domain"><a href="{{urlLink}}">{{domain}}</a></span>{{/if}}
             {{#each categories}}
               <a href="{{categoryLink}}" class="post-category category-{{slug}}">{{name}}</a>
             {{/each}}
