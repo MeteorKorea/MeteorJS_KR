@@ -23,6 +23,7 @@ Setting = FormModel.extend({
     logoWidth: '',
     language: 'en',
     backgroundColor: '',
+    backgroundImage: '',
     secondaryColor: '',
     buttonColor: '',
     headerColor: '',

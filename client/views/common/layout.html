@@ -1,10 +1,16 @@
 <template name="layout">
 
   <style>
+    {{#if backgroundImage}}
+      body {
+        background-image: url("{{backgroundImage}}");
+      }
+    {{else}}
     {{#if backgroundColor}}
       body{
         background-color: {{backgroundColor}};
       }
+    {{/if}}
     {{/if}}
     {{#if buttonColor}}
       input[type="submit"], button, .button, .auth-buttons #login-buttons #login-buttons-password, .btn, .error{
