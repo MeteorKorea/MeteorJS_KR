@@ -4,10 +4,10 @@ serveRSS = function() {
     description: getSetting('tagline'),
     feed_url: Meteor.absoluteUrl()+'feed.xml',
     site_url: Meteor.absoluteUrl(),
-    image_url: Meteor.absoluteUrl()+'img/favicon.png',
+    image_url: Meteor.absoluteUrl()+'img/favicon.png'
   });
   
-  Posts.find({status: STATUS_APPROVED}, {sort: {submitted: -1}, limit: 20}).forEach(function(post) {
+  Posts.find({status: STATUS_APPROVED, categories:{$not:{$elemMatch:{isModerator:true}}}}, {sort: {submitted: -1}, limit: 20}).forEach(function(post) {
     feed.item({
      title: post.headline,
      description: post.body+'</br></br> <a href="'+getPostUrl(post._id)+'">Comments</a>',
