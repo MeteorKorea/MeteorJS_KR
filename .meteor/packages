@@ -1,0 +1,23 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+backbone
+accounts-base
+accounts-ui
+accounts-password
+accounts-twitter
+spiderable
+email
+database-forms
+crypto-md5
+momentjs
+standard-app-packages
+rss
+iron-router
+mailchimp
+nprogress
+telescope-i18n
+fast-render
+spin
