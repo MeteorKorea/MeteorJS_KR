@@ -5,6 +5,12 @@
           <a class="button submit edit-link" href="#">Save</a>
           <div class="controls"><input id="name_{{_id}}" type="text" value="{{name}}" /></div>
           <span class="category-slug small">Slug: /{{slug}}</span>
+          {{#if isAdmin}}
+          <span class="small">admin</span>
+          {{/if}}
+          {{#if isModerator}}
+          <span class="small">moderator</span>
+          {{/if}}
         </div>
       </form>
   </li>

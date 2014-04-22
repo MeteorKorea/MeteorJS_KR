@@ -13,7 +13,9 @@ Template.categories.events({
     
     Meteor.call('category', {
       name: name,
-      slug: slug
+      slug: slug,
+      isAdmin: $('#isAdmin').is(':checked'),
+      isModerator: $('#isModerator').is(':checked')
     }, function(error, categoryName) {
       if(error){
         console.log(error);

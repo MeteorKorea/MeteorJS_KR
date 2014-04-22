@@ -1,3 +1,12 @@
+Template.category_item.helpers({
+  "isAdmin": function() {
+    return !!this.isAdmin;
+  },
+  "isModerator": function() {
+    return !!this.isModerator;
+  }
+});
+
 Template.category_item.events({
   'click .edit-link': function(e, instance){
     e.preventDefault();

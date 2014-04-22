@@ -20,6 +20,9 @@ Template.user_item.helpers({
   userIsAdmin: function(){
     return isAdmin(this);
   },
+  userIsModerator: function(){
+    return isModerator(this);
+  },
   getProfileUrl: function () {
     return getProfileUrl(this);
   },
@@ -58,6 +61,22 @@ Template.user_item.events({
     Meteor.users.update(instance.data._id,{
       $set:{
         isAdmin: false
+      }
+    });
+  },
+  'click .moderator-link': function(e, instance){
+    e.preventDefault();
+    Meteor.users.update(instance.data._id,{
+      $set:{
+        isModerator: true
+      }
+    });
+  },
+  'click .unmoderator-link': function(e, instance){
+    e.preventDefault();
+    Meteor.users.update(instance.data._id,{
+      $set:{
+        isModerator: false
       }
     });
   },
