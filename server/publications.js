@@ -106,7 +106,16 @@ Meteor.publish('allUsersAdmin', function() {
 
 Meteor.publish('singlePost', function(id) {
   if(canViewById(this.userId)){
-    return Posts.find(id);
+    var currentUser = Meteor.users.findOne(this.userId);
+    var isModerator = currentUser && (currentUser.isAdmin || currentUser.isModerator);
+    var param={_id: id};
+
+    if (!isModerator) {
+      // 일반 유저는 isModerator가 true인 카테고리를 포함한 글을 볼 수 없다.
+      param.categories={$not:{$elemMatch:{isModerator:true}}};
+    }
+
+    return Posts.find(param);
   }
   return [];
 });
