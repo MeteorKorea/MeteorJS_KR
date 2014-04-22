@@ -64,8 +64,7 @@ Accounts.onCreateUser(function(options, user){
 });
 
 getEmailHash = function(user){
-  // todo: add some kind of salt in here
-  return CryptoJS.MD5(getEmail(user).trim().toLowerCase() + user.createdAt).toString();
+  return CryptoJS.MD5(getEmail(user).trim().toLowerCase()).toString();
 }
 
 addToMailChimpList = function(user){
