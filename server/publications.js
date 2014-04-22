@@ -125,7 +125,16 @@ Meteor.publish('singlePost', function(id) {
 Meteor.publish('commentPost', function(commentId) {
   if(canViewById(this.userId)){
     var comment = Comments.findOne(commentId);
-    return Posts.find({_id: comment && comment.post});
+    var currentUser = Meteor.users.findOne(this.userId);
+    var isModerator = currentUser && (currentUser.isAdmin || currentUser.isModerator);
+    var param={_id: comment && comment.post};
+
+    if (!isModerator) {
+      // 일반 유저는 isModerator가 true인 카테고리를 포함한 글을 볼 수 없다.
+      param.categories={$not:{$elemMatch:{isModerator:true}}};
+    }
+
+    return Posts.find(param);
   }
   return [];
 });
@@ -170,7 +179,14 @@ Meteor.publish('postComments', function(postId) {
 // Publish a single comment
 
 Meteor.publish('singleComment', function(commentId) {
-  if(canViewById(this.userId)){
+  var isPublic=!Posts.findOne({
+    _id: Comments.findOne(commentId).post,
+    categories: {$elemMatch:{isModerator:true}}
+  });
+  var currentUser = Meteor.users.findOne(this.userId);
+  var isModerator = currentUser && (currentUser.isAdmin || currentUser.isModerator);
+
+  if(canViewById(this.userId) && (isPublic || isModerator)){
     return Comments.find(commentId);
   }
   return [];

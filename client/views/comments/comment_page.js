@@ -1,5 +1,5 @@
 Template.comment_page.helpers({
   post: function () {
-    return Posts.findOne(this.comment.post);
+    return this.comment && Posts.findOne(this.comment.post);
   }
 });
