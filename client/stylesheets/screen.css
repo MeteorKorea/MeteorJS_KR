@@ -341,6 +341,10 @@ body.pageslide-open {
 /* line 5, ../sass/partials/_markdown.scss */
 .markdown em {
   font-style: italic; }
+/* adjust image size. added my spectrum */
+.markdown img {
+  max-width: 100%;
+}
 /* line 8, ../sass/partials/_markdown.scss */
 .markdown ul, .markdown ol {
   padding-left: 18px; }
