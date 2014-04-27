@@ -51,7 +51,7 @@ Accounts.onCreateUser(function(options, user){
         event: 'newUser',
         properties: {
           username: getUserName(user),
-          profileUrl: getProfileUrl(user)
+          profileUrl: getProfileUrlById(user._id)
         },
         userId: admin._id
       }, 'email');

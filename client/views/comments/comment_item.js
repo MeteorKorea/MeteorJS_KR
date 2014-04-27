@@ -148,7 +148,7 @@ Template.comment_item.helpers({
   profileUrl: function(){
     var user = Meteor.users.findOne(this.userId);
     if(user)
-      return getProfileUrl(user);
+      return getProfileUrlById(user._id);
   }  
 });
 

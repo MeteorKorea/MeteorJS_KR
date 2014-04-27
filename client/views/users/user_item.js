@@ -24,14 +24,14 @@ Template.user_item.helpers({
     return isModerator(this);
   },
   getProfileUrl: function () {
-    return getProfileUrl(this);
+    return getProfileUrlById(this._id);
   },
   getKarma: function() {
     return Math.round(100*this.karma)/100;
   },
   getInvitedUserProfileUrl: function () {
     var user = Meteor.users.findOne(this.invitedId);
-    return getProfileUrl(user);
+    return getProfileUrlById(user._id);
   }
 });
 

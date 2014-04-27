@@ -38,7 +38,7 @@ Template.post_item.helpers({
     // note: we don't want the post to be re-rendered every time user properties change
     var user = Meteor.users.findOne(this.userId, {reactive: false});
     if(user)
-      return getProfileUrl(user);
+      return getProfileUrlById(user._id);
   },
   short_score: function(){
     return Math.floor(this.score*1000)/1000;

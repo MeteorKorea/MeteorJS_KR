@@ -11,7 +11,6 @@ var privacyOptions = { // false means private
   'services.google.accessToken': false,
   'services.twitter.id': false,
   'services.google.id': false,
-  'services.facebook.id': false,
   'services.password': false,
   'services.resume': false
 };
