@@ -7,7 +7,11 @@ var privacyOptions = { // false means private
   'profile.email': false,
   'services.twitter.accessToken': false,
   'services.twitter.accessTokenSecret': false,
+  'services.facebook.accessToken': false,
+  'services.google.accessToken': false,
   'services.twitter.id': false,
+  'services.google.id': false,
+  'services.facebook.id': false,
   'services.password': false,
   'services.resume': false
 };
