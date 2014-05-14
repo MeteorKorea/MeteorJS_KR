@@ -7,10 +7,13 @@ Template.search.helpers({
   }
 });
 
+<<<<<<< HEAD
 Template.search.preserve({
   'input#search': function (node) { return node.id; }
 });
 
+=======
+>>>>>>> c488222b599ea655283432afe9b03cf060865b91
 Template.search.events({
   'keyup, search .search-field': function(e){
     e.preventDefault();

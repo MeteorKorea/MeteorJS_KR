@@ -1,18 +1,9 @@
 <template name="settings">
   <div class="grid-small grid-block dialog settings">
-    {{#with setting}}
-
-      <h2>Settings</h2>
-
-      {{#if noSettings}}
-      <p>No settings yet.</p>
-      {{/if}}
-
-      {{#if currentUser.isAdmin}}
-        <form id="json-form"></form>
-        {{generateSettingsForm setting}}
-      {{/if}}
-
-    {{/with}}
+    {{#if this.hasSettings}}
+      {{> quickForm collection="Settings" id="updateSettingsForm" type="update" doc=this.settings }}
+    {{else}}
+      {{> quickForm collection="Settings" id="updateSettingsForm" type="insert"}}
+    {{/if}}
   </div>
 </template>

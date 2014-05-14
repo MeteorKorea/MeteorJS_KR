@@ -1,12 +1,9 @@
 Template.layout.helpers({
   pageName : function(){
-    getCurrentTemplate();
+    // getCurrentTemplate();
   },
   backgroundColor: function(){
   	return getSetting('backgroundColor');
-  },
-  backgroundImage: function(){
-  	return getSetting('backgroundImage');
   },
   secondaryColor: function(){
   	return getSetting('secondaryColor');

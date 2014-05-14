@@ -13,7 +13,7 @@ Template.post_submit.helpers({
   },
   isSelected: function(){
     var post=Posts.findOne(Session.get('selectedPostId'));
-    return post && this._id == post.userId;
+    return (post && this._id == post.userId) ? 'selected' : '';
   }
 });
 
@@ -25,7 +25,7 @@ Template.post_submit.rendered = function(){
     $('#submitted_hidden').val(moment(ev.date).valueOf());
   });
 
-  $("#postUser").selectToAutocomplete();
+  // $("#postUser").selectToAutocomplete(); // XXX
 
 }
 

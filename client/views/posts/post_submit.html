@@ -1,14 +1,13 @@
 <template name="post_submit">
   <div class="grid submit">
     <form class="grid-block form-horizontal">
-      {{#constant}}
-      <div class="control-group">
-        <label class="control-label">{{i18n "Title"}}</label>
-        <div class="controls"><input id="title" type="text" value="" /><a href="#" class="get-title-link inline-link">{{i18n "Suggest title"}}</a></div>
-      </div>
       <div class="control-group">
         <label class="control-label">{{i18n "URL"}}</label>
         <div class="controls"><input id="url" type="text" value="" /></div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">{{i18n "Title"}}</label>
+        <div class="controls"><input id="title" type="text" value="" /><a href="#" class="get-title-link inline-link">{{i18n "Suggest title"}}</a></div>
       </div>
       <div class="control-group">
         <label class="control-label">{{i18n "Body"}}</label>
@@ -26,9 +25,7 @@
         </div>
       </div>
       {{/if}}
-      {{/constant}}
       {{#if isAdmin}}
-        {{#constant}}
         <div class="control-group">
           <label class="control-label">{{i18n "Sticky?"}}</label>
           <div class="controls">
@@ -44,7 +41,7 @@
           <div class="controls">
             <select id="postUser">
               {{#each users}}
-              <option selected="{{isSelected}}" value="{{_id}}">{{userName}}</option>
+              <option {{isSelected}} value="{{_id}}">{{userName}}</option>
               {{/each}}
             </select>
           </div>
@@ -63,7 +60,6 @@
             </label>
           </div>
         </div>
-        {{/constant}} 
       {{/if}}
       <div class="form-actions">
         <input type="submit" value="{{i18n "Submit"}}" />

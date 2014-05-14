@@ -17,3 +17,9 @@ i18next-meteor
 /nprogress
 /fast-render
 /spin
+/blaze-layout
+/autoform
+/simple-schema
+/collection2
+/moment
+/iron-router-progress

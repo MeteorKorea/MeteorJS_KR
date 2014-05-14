@@ -7,7 +7,7 @@ Accounts.onCreateUser(function(options, user){
     postCount: 0,
     commentCount: 0,
     invitedCount: 0
-  }
+  };
   user = _.extend(user, userProperties);
 
   if (options.email)
@@ -25,7 +25,7 @@ Accounts.onCreateUser(function(options, user){
     posts: false,
     comments: true,
     replies: true
-  }
+  };
 
   // create slug from username
   user.slug = slugify(getUserName(user));
@@ -86,7 +86,7 @@ addToMailChimpList = function(user){
       double_optin: false
     });
   }
-}
+};
 
 Meteor.methods({
   changeEmail: function(newEmail) {

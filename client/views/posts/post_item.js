@@ -8,10 +8,7 @@ Template.post_item.helpers({
     return this.post || this;
   },
   postLink: function(){
-    return "/posts/"+this._id;
-  },
-  urlLink: function(){
-    return !!this.url ? getOutgoingUrl(this.url) : '#';
+    return !!this.url ? getOutgoingUrl(this.url) : "/posts/"+this._id;
   },
   postTarget: function() {
     return !!this.url ? '_blank' : '';
@@ -97,20 +94,20 @@ var recalculatePosition = function ($object, pArray) {
 }
 
 Template.post_item.rendered = function(){
-  var instance = this,
-      $instance = $(instance.firstNode.nextSibling),
-      top = $instance.position().top;
+  // var instance = this,
+  //     $instance = $(instance.firstNode.nextSibling),
+  //     top = $instance.position().top;
 
-  // if this is the first render, initialize array, else push current position
-  if(typeof instance.pArray === 'undefined'){
-    instance.pArray = [top]
-  }else{
-    instance.pArray.push(top);
-  }
+  // // if this is the first render, initialize array, else push current position
+  // if(typeof instance.pArray === 'undefined'){
+  //   instance.pArray = [top]
+  // }else{
+  //   instance.pArray.push(top);
+  // }
 
-  // if this is *not* the first render, recalculate positions
-  if(instance.pArray.length>1)
-    recalculatePosition($instance, instance.pArray);
+  // // if this is *not* the first render, recalculate positions
+  // if(instance.pArray.length>1)
+  //   recalculatePosition($instance, instance.pArray);
 
 };
 
