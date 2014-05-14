@@ -93,6 +93,10 @@ Settings = new Meteor.Collection("settings", {
             type: String,
             optional: true
         },
+        backgroundImage: {
+            type: String,
+            optional: true
+        },
         secondaryColor: {
             type: String,
             optional: true

@@ -1,6 +1,4 @@
-﻿﻿// needs Markdown.Converter.js at the moment
-
-(function () {
+﻿(function () {
 
     var util = {},
         position = {},

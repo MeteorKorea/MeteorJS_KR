@@ -5,7 +5,9 @@ Template.layout.helpers({
   backgroundColor: function(){
   	return getSetting('backgroundColor');
   },
-  secondaryColor: function(){
+  backgroundImage: function(){
+  	return getSetting('backgroundImage');
+  },  secondaryColor: function(){
   	return getSetting('secondaryColor');
   },
   buttonColor: function(){

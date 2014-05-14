@@ -17,18 +17,6 @@
         </div>
       </li>
       {{/if}}
-      {{#if hasCategories}}
-      <li class="dropdown">
-        <a class="categories" href="/">{{i18n "Categories"}}</a>
-        <div class="dropdown-menu">
-          <ul role="menu" aria-labelledby="dLabel">
-            {{# each categories}}
-              <li><a class="pending" href="{{categoryLink}}">{{name}}</a></li>
-            {{/each}}
-          </ul>
-        </div>
-      </li>
-      {{/if}}
       {{#if isAdmin}}
       <li class="dropdown">
         <a class="admin" href="/">{{i18n "Administration"}}</a>
@@ -70,4 +58,12 @@
     </div>
 
   </header>
+  {{#if hasCategories}}
+  <div class="grid">
+    <a class="badge tag" href="/">{{i18n "All"}}</a>
+    {{# each categories}}
+      <a class="badge" href="{{categoryLink}}">{{name}}</a>
+    {{/each}}
+  </div>
+  {{/if}}
 </template>
