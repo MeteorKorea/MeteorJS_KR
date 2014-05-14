@@ -8,6 +8,9 @@ Template.post_item.helpers({
     return this.post || this;
   },
   postLink: function(){
+    return "/posts/"+this._id;
+  },
+  urlLink: function(){
     return !!this.url ? getOutgoingUrl(this.url) : "/posts/"+this._id;
   },
   postTarget: function() {
