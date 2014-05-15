@@ -51,8 +51,7 @@ Template.post_edit.helpers({
 });
 
 Template.post_edit.rendered = function(){
-  var post = this;
-
+  var post = this.data && this.data.postId && Posts.findOne(this.data.postId);
   if(post && !this.editor){
 
     this.editor= new EpicEditor(EpicEditorOptions).load();
@@ -61,10 +60,7 @@ Template.post_edit.rendered = function(){
     $('#submitted_date').datepicker();
 
   }
-
-  // $("#postUser").selectToAutocomplete(); // XXX
-
-}
+};
 
 Template.post_edit.events({
   'click input[type=submit]': function(e, instance){
