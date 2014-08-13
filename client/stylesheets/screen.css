@@ -386,13 +386,12 @@ body.pageslide-open {
 .markdown h5 {
   font-size: 14px; }
 /* line 50, ../sass/partials/_markdown.scss */
-.markdown pre{
+.markdown pre {
   background-color: #f8f8f8;
   border: 1px solid #ccc;
   overflow: auto;
   padding: 6px 10px;
-  border-radius: 3px;
-}
+  border-radius: 3px; }
 /* line 57, ../sass/partials/_markdown.scss */
 .markdown code {
   font-family: monospace; }
