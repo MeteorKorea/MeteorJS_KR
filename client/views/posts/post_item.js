@@ -44,8 +44,7 @@ Template.post_item.helpers({
     return Math.floor(this.score*1000)/1000;
   },
   body_formatted: function(){
-    var converter = new Markdown.Converter();
-    var html_body=converter.makeHtml(this.body);
+    var html_body=marked(this.body);
     return html_body.autoLink();
   },
   ago: function(){

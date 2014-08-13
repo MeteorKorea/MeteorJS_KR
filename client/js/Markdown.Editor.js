@@ -824,7 +824,7 @@
 
             var prevTime = new Date().getTime();
 
-            text = converter.makeHtml(text);
+            text = marked(text);
 
             // Calculate the processing time of the HTML creation.
             // It's used as the delay time in the event listener.

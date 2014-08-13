@@ -386,13 +386,16 @@ body.pageslide-open {
 .markdown h5 {
   font-size: 14px; }
 /* line 50, ../sass/partials/_markdown.scss */
-.markdown code {
-  font-family: monospace;
-  margin: 0 2px;
-  padding: 0px 5px;
-  border: 1px solid #ddd;
+.markdown pre{
   background-color: #f8f8f8;
-  border-radius: 3px; }
+  border: 1px solid #ccc;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+/* line 57, ../sass/partials/_markdown.scss */
+.markdown code {
+  font-family: monospace; }
 
 /* line 1, ../sass/partials/_tooltips.scss */
 .has-tooltip {
